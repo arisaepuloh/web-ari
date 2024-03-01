@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ari saepuloh</title>
+    <link rel="stylesheet" href="/src/output.css">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400&family=Roboto&display=swap"
+        rel="stylesheet">
+
+    <!-- alpine -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+    <!-- link aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+</head>
+
+<body class="bg-slate-900 font-poppins">
+
+    <div
+        class="fixed w-96 xl:w-[620px] h-96 xl:h-[620px] bg-fuchsia-400/30 xl:bg-fuchsia-400/20 blur-3xl rounded-full -z-50 bottom-0 xl:-bottom-28 -right-1/2 xl:-right-1/5 xl:-translate-x-1/2 animate-pulse">
+    </div>
+
+
+    <!-- navigasi -->
+    <nav id="home" x-data="{ open: false, atTop : true }" @scroll.window="atTop = window.pageYOffset>50?false:true"
+        class="p-4 md:px-8 lg:px-16 my-4 top-0 z-50 sticky"
+        :class="(atTop === false)?'bg-black/60 backdrop-blur-lg':''">
+        <div class="container mx-auto">
+            <div class="justify-between items-center flex">
+
+                <!-- logo -->
+                <div class="order-1 sm:order-2">
+                    <div class="text-white font-poppins text-sm sm:text-base lg:text-xl font-semibold">
+                        Ari<span class="text-amber-300">Saepulloh</span>
+                    </div>
+                </div>
+
+
+                <!-- hamburger -->
+                <!-- button toggle mobile-->
+                <div x-on:click="open = ! open"
+                    class="order-2 sm:order-1 lg:hidden w-10 h-10 rounded-tl-xl rounded-br-xl bg-amber-300 cursor-pointer relative">
+                    <span x-bind:class="! open ? 'open' : 'close'"
+                        class="bg-slate-900 absolute transition-all duration-200"></span>
+                    <span x-bind:class="! open ? 'open' : 'close'"
+                        class="bg-slate-900 absolute transition-all duration-200"></span>
+                    <span x-bind:class="! open ? 'open' : 'close'"
+                        class="bg-slate-900 absolute transition-all duration-200"></span>
+                </div>
+
+
+                <!-- menu letstalk -->
+                <a href=""
+                    class="hidden sm:block order-3 px-4 py-2 bg-amber-300 font-poppins font-semibold text-slate-900 rounded-tl-2xl rounded-br-xl">
+                    Lets'Talk</a>
+
+                <!-- menu dekstop -->
+                <div class="hidden lg:flex text-center justify-center order-2 gap-14">
+                    <a href="#home" class="text-white font-roboto text-sm">
+                        Home
+                    </a>
+                    <a href="#about" class="text-white font-roboto text-sm">
+                        About
+                    </a>
+                    <a href="#project" class="text-white font-roboto text-sm">
+                        Portfolio
+                    </a>
+                    <a href="#skil" class="text-white font-roboto text-sm">
+                        Skil
+                    </a>
+                </div>
+
+
+                <!-- menu mobile -->
+                <div x-show="open"
+                    class="absolute top-20 left-4 right-4 sm:right-1/2 md:left-8 px-16 py-8 bg-black/60 backdrop-blur-lg rounded-tl-xl rounded-br-xl"
+                    x-transition>
+                    <div class="flex flex-col justify-center gap-4 text-amber-300 font-zendots text-center">
+                        <a href="#home" class="text-sm relative group">
+                            Home
+                            <span
+                                class="absolute w-0 group-hover:w-full h-0.5 bg-amber-300 -bottom-1 left-1/2 -translate-x-1/2 transition-all duration-200"></span>
+                        </a>
+                        <a href="#about" class="text-sm relative group">
+                            About
+                            <span
+                                class="absolute w-0 group-hover:w-full h-0.5 bg-amber-300 -bottom-1 left-1/2 -translate-x-1/2 transition-all duration-200"></span>
+                        </a>
+                        <a href="#project" class="text-sm relative group">
+                            Portfolio
+                            <span
+                                class="absolute w-0 group-hover:w-full h-0.5 bg-amber-300 -bottom-1 left-1/2 -translate-x-1/2 transition-all duration-200"></span>
+                        </a>
+                        <a href="#skil" class="text-sm relative group">
+                            Skil
+                            <span
+                                class="absolute w-0 group-hover:w-full h-0.5 bg-amber-300 -bottom-1 left-1/2 -translate-x-1/2 transition-all duration-200"></span>
+                        </a>
+                        <a href="#"
+                            class="sm:hidden text-sm relative group px-4 py-2 bg-amber-300 text-slate-900 rounded-tl-xl rounded-br-xl overflow-hidden">
+                            <span class="z-10">Lets' Talk</span>
+                            <span
+                                class="absolute w-12 h-12 bg-fuchsia-500 rounded-full -bottom-5 left-0 group-hover:left-[100%] group-hover:bottom-0 blur-xl -translate-x-1/2 transition-all duration-500"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- header -->
+    <header id="" class="relative lg:mt-28  ">
+        <div class="container px-2  md:px-8 lg:px-16 mx-auto ">
+            <div class="grid grid-cols-4 lg:grid-cols-12 lg:items-center justify-center">
+
+                <!-- gambar -->
+                <div class="col-span-4  order-1 lg:order-2 justify-center ">
+                    <div class="w-[70%] lg:w-full mx-auto">
+                        <img src="../image/Group 1.png" alt="" class="mx-auto px-4  lg:w-[90%]">
+                    </div>
+                    <div class="relative">
+                        <div class="  w-20 h-20 bg-gradient-to-br from-fuchsia-500 to-sky-600 rounded-full -translate-x-1/2 absolute 
+                    -z-50 -top-28"></div>
+                        <div class=" w-10 h-10 bg-gradient-to-br from-fuchsia-500 to-sky-600 rounded-full  -translate-y-1/2 -right-1/4
+                    -z-50 top-0"></div>
+                    </div>
+                </div>
+
+                <!-- text mobile -->
+                <div class="col-span-4 order-2 lg:order-1 text-center lg:text-start  ">
+                    <h1 class="text-3xl lg:text-5xl text-amber-300 font-poppins font-bold">Ari saepulloh </h1>
+                    <h2 class="text-white text-2xl font-semibold mt-3">UI/UX - FRONTEND WEB</h2>
+
+                    <div class="mt-3 hidden lg:block w-full h-0.5 bg-gradient-to-r from-amber-300 to-fuchsia-500"></div>
+
+                    <p class="text-slate-300 lg:mt-20 mt-5 mb-6 lg:mb-0 " data-aos="fade-right">Saya adalah seorang
+                        desainer UI/UX dan
+                        frontend web dengan kreativitas tinggi dan keahlian teknis yang solid. Dengan latar belakang
+                        dalam menciptakan antarmuka pengguna yang menarik dan pengalaman pengguna yang optimal</p>
+
+                    <a href=""
+                        class="hover:bg-gradient-to-br hover:from-white hover:to-amber-300 hover:text-slate-900 transition-all duration-300 px-4 lg:hidden py-2 bg-gradient-to-br from-fuchsia-500 to-sky-600  rounded-lg font-poppins font-bold text-white mt-5 ">Dwnload
+                        CV</a>
+
+                        <div class="flex justify-center mb-6 lg:hidden mt-8 gap-4">
+                            <a href="https://www.tiktok.com/@user_interface1" class="px-2 py-2 bg-gradient-to-br from-slate-100 to-fuchsia-400 rounded-full hover:animate-bounce">
+                                <img src="../image/contac/facebook (2).svg" alt="">
+                            </a>
+                            <a href="https://www.instagram.com/ari.atenk/" class="px-2 py-2 bg-gradient-to-br from-slate-100 to-fuchsia-400 rounded-full hover:animate-bounce">
+                               <img src="../image/contac/instagram (4).svg" alt="">
+                            </a>
+                            <a href="" class="px-2 py-2 bg-gradient-to-br from-slate-100 to-fuchsia-400 rounded-full hover:animate-bounce">
+                               <img src="../image/contac/linkedin (2).svg" alt="">
+                            </a>
+                            <a href="https://www.tiktok.com/@user_interface1" class="px-2 py-2 bg-gradient-to-br from-slate-100 to-fuchsia-400 rounded-full hover:animate-bounce">
+                                <img src="../image/contac/tiktok (1).svg" alt="">
+                            </a>
+                        </div>
+                </div>
+
+                <!-- text dektop -->
+
+                <div class="col-span-4 hidden lg:block order-3 text-start ml-6 mt-5 lg:-mt-28 ">
+                   
+                    <p class="text-white font-roboto text-sm mt-4">Menjadi yang lebih baik dari kemari adalah hal tujuan
+                        saya</p>
+
+                    <a href="" class="text-amber-300 text-xs mt-4 flex items-center gap-2  ">
+                        <span>Dwnload CV</span>
+                        <svg class="w-[10px] h-[10px]  dark:text-white" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 8h11m0 0-4-4m4 4-4 4m-5 3H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3" />
+                        </svg>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- section iklan -->
+    <section class=" hidden lg:block relative ">
+        <div
+            class="container mx-auto px-4 md:px-8 lg:px-16 items-center absolute top-10 shadow-2xl -translate-x-1/2 left-1/2">
+            <div class="px-4 py-5 bg-slate-600 flex flex-wrap justify-center rounded-lg gap-6 ">
+                <!-- google -->
+                <div
+                    class="w-[257px] h-[79px] items-center bg-gradient-to-br from-fuchsia-500 to-sky-500 hover:bg-gradient-to-br hover:from-white hover:to-amber-300 transition-all duration-1000 delay-500 cursor-pointer rounded-xl relative ">
+                    <div class="w-[50%] mx-auto absolute -translate-x-1/2 left-1/2 mt-4">
+                        <img src="../image/image 1.png" alt="" class="items-center">
+                    </div>
+                </div>
+                <!-- google -->
+                <div
+                    class="w-[257px] h-[79px] items-center bg-gradient-to-br from-fuchsia-500 to-sky-500 hover:bg-gradient-to-br hover:from-white hover:to-amber-300 transition-all duration-1000 delay-500 cursor-pointer rounded-xl relative">
+                    <div class="w-[50%] mx-auto absolute -translate-x-1/2 left-1/2 mt-5">
+                        <img src="../image/linkind.png" alt="" class="">
+                    </div>
+                </div>
+                <!-- google -->
+                <div
+                    class="w-[257px] h-[79px] items-center bg-gradient-to-br from-fuchsia-500 to-sky-500 hover:bg-gradient-to-br hover:from-white hover:to-amber-300 transition-all duration-1000 delay-500 cursor-pointer rounded-xl relative">
+                    <div class="w-[50%] mx-auto absolute -translate-x-1/2 left-1/2 mt-4">
+                        <img src="../image/drible.png" alt="" class="">
+                    </div>
+                </div>
+                <!-- google -->
+                <div
+                    class="w-[257px] h-[79px] items-center bg-gradient-to-br from-fuchsia-500 to-sky-500 hover:bg-gradient-to-br hover:from-white hover:to-amber-300 transition-all duration-1000 delay-500 cursor-pointer rounded-xl relative">
+                    <div class="w-[50%] mx-auto absolute -translate-x-1/2 left-1/2 mt-4">
+                        <img src="../image/image 2.png" alt="" class="">
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- section about -->
+    <section id="about" class="   lg:mt-28 my-4 pt-24 lg:pt-28  pb-24 lg:pb-44 -z-30 lg:bg-slate-950  ">
+        <div class="container mx-auto px-4 lg:px-16 md:px-8 ">
+            <div class="grid grid-cols-4 lg:grid-cols-12 gap-24 ">
+
+                <!-- text -->
+                <div class="col-span-4 lg:col-span-7 ">
+                    <div class="flex flex-col text-center lg:text-start gap-2 lg:gap-8">
+                        <h1 class="font-poppins text-2xl lg:text-4xl text-fuchsia-500 font-semibold">About Me</h1>
+                        <p class="text-sm text-slate-300 lg:text-base">Saya adalah seorang siswa di SMK MUHAMMDITAH 2
+                            KUINGAN dengan jurusan REKAYASA PERANGKAT LUNAK (RPL), saya sedang mempelajari bahasa
+                            pemrograman unutk menjadi seorang frontend web , saya suka dengan yang namnya visual atau
+                            tampilan ,karena itu bisa menjadikan mood saya naik </p>
+
+                        <div class="w-full mt-6 grid grid-cols-4 gap-6 text-center">
+                            <div class="col-span-4 md:col-span-2 group cursor-pointer">
+                                <div
+                                    class="px-4 py-2 border-4 group-hover:bg-gradient-to-br from-fuchsia-500 to-amber-300 transition-all duration-300 border-fuchsia-400 rounded-lg ">
+                                    <h1 class="text-2xl text-amber-300 font-poppins font-bold mb-2">12+</h1>
+                                    <p class="text-slate-200 text-sm font-roboto">Project</p>
+                                </div>
+                            </div>
+                            <div class="col-span-4 md:col-span-2 group cursor-pointer">
+                                <div
+                                    class="px-4 py-2 border-4 group-hover:bg-gradient-to-br from-fuchsia-500 to-amber-300 transition-all duration-300 border-fuchsia-400 rounded-lg ">
+                                    <h1 class="text-2xl text-amber-300 font-poppins font-bold mb-2">4+</h1>
+                                    <p class="text-slate-200 text-sm font-roboto">Certifikat BootCamp</p>
+                                </div>
+                            </div>
+                            <div class="col-span-4 md:col-span-2 group cursor-pointer">
+                                <div
+                                    class="px-4 py-2 border-4 group-hover:bg-gradient-to-br from-fuchsia-500 to-amber-300 transition-all duration-300 border-fuchsia-400 rounded-lg ">
+                                    <h1 class="text-2xl text-amber-300 font-poppins font-bold mb-2">2</h1>
+                                    <p class="text-slate-200 text-sm font-roboto">Magang</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- gambar -->
+                <div class="col-span-4 lg:col-span-5 pb-8 hidden lg:block ml-6">
+                    <h1 class="text-amber-300 text-3xl font-poppins font-semibold ml-0">Learning</h1>
+                    <div class="w-0.5 h-full pt-36 lg:pb-0 mt-6 bg-gradient-to-br from-fuchsia-500 to-amber-300"></div>
+                    <div class="relative -top-32 lg:-top-96">
+                        <div class="absolute w-4 h-4 bg-white  rounded-full  -translate-x-2 "></div>
+                        <!-- text -->
+                        <div class="px-4  absolute text-white">
+                            <h1 class="lg:font-bold text-sm font-semibold">SDN KARANGANYAR</h1>
+                            <p class="text-amber-300">2014 - 2019</p>
+                        </div>
+                    </div>
+                    <div class="relative -top-16 lg:-top-[320px]">
+                        <div class="absolute w-4 h-4 bg-white  rounded-full  -translate-x-2 "></div>
+                        <!-- text -->
+                        <div class="px-4  absolute text-white">
+                            <h1 class="lg:font-bold text-sm font-semibold lg:text-base">Mts NEGRI 5 KUNINGAN</h1>
+                            <p class="text-amber-300">2019 - 2021</p>
+                        </div>
+                    </div>
+                    <div class="relative  lg:-top-[256px]">
+                        <div class="absolute w-4 h-4 bg-white  rounded-full  -translate-x-2 "></div>
+                        <!-- text -->
+                        <div class="px-4  absolute text-white">
+                            <h1 class="lg:font-bold text-sm lg:text-base font-semibold">SMK MUHAMMDIYAH 2 KUNINGAN</h1>
+                            <p class="text-amber-300">2021 - 2023</p>
+                        </div>
+                    </div>
+                    <div class="relative  lg:-top-[192px]">
+                        <div class="absolute w-4 h-4 bg-white  rounded-full  -translate-x-2 "></div>
+                        <!-- text -->
+                        <div class="px-4  absolute text-white">
+                            <h1 class="lg:font-bold text-sm lg:text-base font-semibold">PONPES AT-TAUFIQIYYAH</h1>
+                            <p class="text-amber-300">2008 - sekarang</p>
+                        </div>
+                    </div>
+                    <div class="relative  lg:-top-[128px]">
+                        <div class="absolute w-4 h-4 bg-white  rounded-full  -translate-x-2 "></div>
+                        <!-- text -->
+                        <div class="px-4  absolute text-white">
+                            <h1 class="lg:font-bold text-sm lg:text-base font-semibold">BOOT CAMP UI/UX</h1>
+                            <p class="text-amber-300">13 - 20 juli 2023</p>
+                        </div>
+                    </div>
+                    <div class="relative  lg:-top-[64px]">
+                        <div class="absolute w-4 h-4 bg-white  rounded-full  -translate-x-2 "></div>
+                        <!-- text -->
+                        <div class="px-4  absolute text-white">
+                            <h1 class="lg:font-bold text-sm lg:text-base font-semibold">BOOT CAMP LARAVEL </h1>
+                            <p class="text-amber-300">21 - 30 juli 2023</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    
+
+
+    <!-- section portofolio -->
+    <section id="project" class="container mx-auto px-4 md:px-8 lg:px-16 pb-24 lg:pb-44 lg:mt-44">
+        <!-- judul -->
+        <div class="flex flex-col text-center lg:text-start gap-2">
+            <h1 class="text-fuchsia-500 text-2xl font-poppins lg:text-4xl font-semibold">PROJECT</h1>
+            <p class="text-sm text-slate-200 lg:text-base">Project ini saya buat sendiri ada beberapa yang kerja sama
+                dan ada yang project belajar saya sendiri di bawah ini project Design App Design Web dan Web Frontend ,
+                dengan skil yang saya punya saya dapat membangun project tersebut </p>
+        </div>
+
+
+        <!-- card -->
+        <div class="grid grid-cols-4 lg:grid-cols-12 md:grid-cols-8 mt-7 gap-6">
+
+    
+            <!-- card 1 -->
+            <div class="col-span-4 relative">
+                <div class=" pb-6 bg-slate-950 overflow-hidden ">
+                    <img src="../image/canvasing.png" alt="" class="w-full">
+
+                    <div class="flex flex-col px-4 mt-6 gap-4">
+                        <div class="flex gap-2 ">
+                            <div
+                                class="w-16 h-8 bg-white rounded-full shadow-2xl overflow-hidden cursor-pointer hover:bg-gradient-to-br from-fuchsia-500 to-amber-500 hover:scale-110 transition-all duration-1000">
+                                <img src="../image/icon skil/download (4) 1.png" alt="" class="mx-auto -mt-1">
+                            </div>
+
+                        </div>
+                        <div class=" py-4 items-start">
+                            <a href=""
+                                class="text-white font-bold hover:bg-gradient-to-br hover:from-fuchsia-500 hover:to-amber-300 transition-all duration-1000 px-4 py-2 bg-gradient-to-br from-amber-300 to-fuchsia-500 rounded-full text-center">Live
+                                Perview</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- card 1 -->
+            <div class="col-span-4 relative">
+                <div class=" pb-6 bg-slate-950 overflow-hidden ">
+                    <img src="../image/medis.png" alt="" class="w-full">
+
+                    <div class="flex flex-col px-4 mt-6 gap-4">
+
+                        <div class="flex gap-2 ">
+                            <div
+                                class="w-16 h-8 bg-white rounded-full shadow-2xl overflow-hidden cursor-pointer hover:bg-gradient-to-br from-fuchsia-500 to-amber-500 hover:scale-110 transition-all duration-1000">
+                                <img src="../image/icon skil/download (4) 1.png" alt="" class="mx-auto -mt-1">
+                            </div>
+
+                        </div>
+                        <div class=" py-4 items-start">
+                            <a href=""
+                                class="text-white font-bold hover:bg-gradient-to-br hover:from-fuchsia-500 hover:to-amber-300 transition-all duration-1000 px-4 py-2 bg-gradient-to-br from-amber-300 to-fuchsia-500 rounded-full text-center">Live
+                                Perview</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- card 1 -->
+            <div class="col-span-4 relative">
+                <div class=" pb-6 bg-slate-950 overflow-hidden ">
+                    <img src="../image/resto.png" alt="" class="w-full">
+
+                    <div class="flex flex-col px-4 mt-6 gap-4">
+
+                        <div class="flex gap-2 ">
+                            <div
+                                class="w-16 h-8 bg-white rounded-full shadow-2xl overflow-hidden cursor-pointer hover:bg-gradient-to-br from-fuchsia-500 to-amber-500 hover:scale-110 transition-all duration-1000">
+                                <img src="../image/icon skil/download (4) 1.png" alt="" class="mx-auto -mt-1">
+                            </div>
+
+                        </div>
+                        <div class=" py-4 items-start">
+                            <a href=""
+                                class="text-white font-bold hover:bg-gradient-to-br hover:from-fuchsia-500 hover:to-amber-300 transition-all duration-1000 px-4 py-2 bg-gradient-to-br from-amber-300 to-fuchsia-500 rounded-full text-center">Live
+                                Perview</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+            <!-- card 1 -->
+            <div class="col-span-4 relative">
+                <div class=" pb-6 bg-slate-950 overflow-hidden ">
+                    <img src="../image/project/Instagram post - 1 (4).png" alt="" class="w-full">
+
+                    <div class="flex flex-col px-4 mt-6 gap-4">
+                        <div class="flex gap-2 ">
+                            <div
+                                class="w-8 overflow-hidden h-8 bg-white rounded-full shadow-2xl cursor-pointer hover:bg-gradient-to-br from-fuchsia-500 to-amber-500 hover:scale-110 transition-all duration-1000">
+                                <img src="../image/icon skil/html5.png" alt="" class="w-[80%] mx-auto mt-1">
+                            </div>
+                            <div
+                                class="w-8 overflow-hidden h-8 bg-white rounded-full shadow-2xl cursor-pointer hover:bg-gradient-to-br from-fuchsia-500 to-amber-500 hover:scale-110 transition-all duration-1000">
+                                <img src="../image/icon skil/tailwindcss.png" alt="" class="mx-auto mt-1">
+                            </div>
+
+                            <div
+                                class="w-8 overflow-hidden h-8 bg-white rounded-full shadow-2xl cursor-pointer hover:bg-gradient-to-br from-fuchsia-500 to-amber-500 hover:scale-110 transition-all duration-1000">
+                                <img src="../image/icon skil/download (15) 1.png" alt="">
+                            </div>
+                        </div>
+                        <div class=" py-4 items-start">
+                            <a href=""
+                                class="text-white font-bold hover:bg-gradient-to-br hover:from-fuchsia-500 hover:to-amber-300 transition-all duration-1000 px-4 py-2 bg-gradient-to-br from-amber-300 to-fuchsia-500 rounded-full text-center">Live
+                                Perview</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- card 1 -->
+            <div class="col-span-4 relative">
+                <div class=" pb-6 bg-slate-950 overflow-hidden ">
+                    <img src="../image/Slide 2.png" alt="" class="w-full">
+
+                    <div class="flex flex-col px-4 mt-6 gap-4">
+                        <div class="flex gap-2 ">
+                            <div
+                                class="w-8 overflow-hidden h-8 bg-white rounded-full shadow-2xl cursor-pointer hover:bg-gradient-to-br from-fuchsia-500 to-amber-500 hover:scale-110 transition-all duration-1000">
+                                <img src="../image/icon skil/html5.png" alt="" class="w-[80%] mx-auto mt-1">
+                            </div>
+                            <div
+                                class="w-8 overflow-hidden h-8 bg-white rounded-full shadow-2xl cursor-pointer hover:bg-gradient-to-br from-fuchsia-500 to-amber-500 hover:scale-110 transition-all duration-1000">
+                                <img src="../image/icon skil/tailwindcss.png" alt="" class="mx-auto mt-1">
+                            </div>
+
+                            <div
+                                class="w-8 overflow-hidden h-8 bg-white rounded-full shadow-2xl cursor-pointer hover:bg-gradient-to-br from-fuchsia-500 to-amber-500 hover:scale-110 transition-all duration-1000">
+                                <img src="../image/icon skil/download (15) 1.png" alt="">
+                            </div>
+                            <div
+                                class="w-8 overflow-hidden h-8 bg-white rounded-full shadow-2xl cursor-pointer hover:bg-gradient-to-br from-fuchsia-500 to-amber-500 hover:scale-110 transition-all duration-1000">
+                                <img src="../image/icon skil/laravel.png" alt="">
+                            </div>
+                        </div>
+                        <div class=" py-4 items-start">
+                            <a href=""
+                                class="text-white font-bold hover:bg-gradient-to-br hover:from-fuchsia-500 hover:to-amber-300 transition-all duration-1000 px-4 py-2 bg-gradient-to-br from-amber-300 to-fuchsia-500 rounded-full text-center">Live
+                                Perview</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- card 1 -->
+            <div class="col-span-4 relative">
+                <div class=" pb-6 bg-slate-950 overflow-hidden ">
+                    <img src="../image/project/Instagram post - 1 (10).png" alt="" class="w-full">
+
+                    <div class="flex flex-col px-4 mt-6 gap-4">
+                        <div class="flex gap-2 ">
+                            <div
+                                class="w-8 overflow-hidden h-8 bg-white rounded-full shadow-2xl cursor-pointer hover:bg-gradient-to-br from-fuchsia-500 to-amber-500 hover:scale-110 transition-all duration-1000">
+                                <img src="../image/icon skil/html5.png" alt="" class="w-[80%] mx-auto mt-1">
+                            </div>
+                            <div
+                                class="w-8 overflow-hidden h-8 bg-white rounded-full shadow-2xl cursor-pointer hover:bg-gradient-to-br from-fuchsia-500 to-amber-500 hover:scale-110 transition-all duration-1000">
+                                <img src="../image/icon skil/tailwindcss.png" alt="" class="mx-auto mt-1">
+                            </div>
+
+                            <div
+                                class="w-8 overflow-hidden h-8 bg-white rounded-full shadow-2xl cursor-pointer hover:bg-gradient-to-br from-fuchsia-500 to-amber-500 hover:scale-110 transition-all duration-1000">
+                                <img src="../image/icon skil/download (15) 1.png" alt="">
+                            </div>
+                        </div>
+                        <div class=" py-4 items-start">
+                            <a href=""
+                                class="text-white font-bold hover:bg-gradient-to-br hover:from-fuchsia-500 hover:to-amber-300 transition-all duration-1000 px-4 py-2 bg-gradient-to-br from-amber-300 to-fuchsia-500 rounded-full text-center">Live
+                                Perview</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- skil -->
+    <section id="skil" class="container mx-auto px-4 md:px-8 lg:px-16 pb-24 lg:pb-44">
+
+
+        <!-- skil -->
+        <div class="grid gird-cols-4 lg:grid-cols-12 mt-8 gap-5 lg:items-center ">
+            <div
+                class="col-span-4 lg:col-span-8 px-4 pb-24 bg-gradient-to-br from-slate-500/20 to-fuchsia-500/20 backdrop-blur-lg shadow-2xl rounded-lg order-2 lg:order-1">
+                <div class="flex flex-col mt-4">
+                    <h1 class="text-amber-500 lg:text-2xl font-poppins font-bold ">SKIL</h1>
+                </div>
+                <div class="flex flex-wrap  lg:justify-start lg:ml-6 mt-8 gap-8">
+                    <div
+                        class="px-4 py-2 bg-white hover:bg-gradient-to-br hover:from-fuchsia-500 hover:to-amber-300  hover:scale-125 transition-all duration-1000 hover:text-white rounded-lg text-slate-900 font-poppins cursor-pointer font-bold">
+                        UI/UX DESIGN</div>
+                    <div
+                        class="px-4 py-2 bg-white hover:bg-gradient-to-br hover:from-fuchsia-500 hover:to-amber-300  hover:scale-125 transition-all duration-1000 hover:text-white rounded-lg text-slate-900 font-poppins cursor-pointer font-bold">
+                        FRONTEND WEB</div>
+
+                </div>
+                <div class="flex flex-col mt-8">
+                    <h1 class="text-amber-500 lg:text-2xl font-poppins font-bold " data-aos="fade-right">TOOLS</h1>
+                </div>
+                <div class="flex flex-wrap  lg:justify-start lg:ml-6 mt-8 gap-6">
+                    <div
+                        class="w-16 overflow-hidden h-16 bg-white rounded-2xl shadow-2xl cursor-pointer hover:bg-gradient-to-br hover:from-fuchsia-500 hover:to-amber-300  hover:scale-125 transition-all duration-1000">
+                        <img src="../image/icon skil/figma.png" alt="" class="mx-auto w-[70%] -mt-1">
+                    </div>
+                    <div
+                        class="w-16 overflow-hidden h-16 bg-white rounded-2xl shadow-2xl cursor-pointer hover:bg-gradient-to-br hover:from-fuchsia-500 hover:to-amber-300  hover:scale-125 transition-all duration-1000">
+                        <img src="../image/icon skil/images (4).png" alt="" class="mx-auto w-full mt-1">
+                    </div>
+                    <div
+                        class="w-16 overflow-hidden h-16 bg-white rounded-2xl shadow-2xl cursor-pointer hover:bg-gradient-to-br hover:from-fuchsia-500 hover:to-amber-300  hover:scale-125 transition-all duration-1000">
+                        <img src="../image/icon skil/adobe AI.png" alt="" class="mx-auto w-[80%] mt-2">
+                    </div>
+                    <div
+                        class="w-16 overflow-hidden h-16 bg-white rounded-2xl shadow-2xl cursor-pointer hover:bg-gradient-to-br hover:from-fuchsia-500 hover:to-amber-300  hover:scale-125 transition-all duration-1000">
+                        <img src="../image/icon skil/images (12).png" alt="" class="mx-auto w-[70%] mt-2">
+                    </div>
+
+                </div>
+                <div class="w-full h-0.5 bg-gradient-to-br from-fuchsia-500 to-amber-300 mt-6 lg:hidden"></div>
+                <div class="flex flex-wrap  lg:justify-start lg:ml-6 mt-8 gap-6">
+                    <div
+                        class="w-16 overflow-hidden h-16 bg-white rounded-2xl shadow-2xl cursor-pointer hover:bg-gradient-to-br hover:from-fuchsia-500 hover:to-amber-300  hover:scale-125 transition-all duration-1000">
+                        <img src="../image/icon skil/html5.png" alt="" class="mx-auto w-[70%] mt-2">
+                    </div>
+                    <div
+                        class="w-16 overflow-hidden h-16 bg-white rounded-2xl shadow-2xl cursor-pointer hover:bg-gradient-to-br hover:from-fuchsia-500 hover:to-amber-300  hover:scale-125 transition-all duration-1000">
+                        <img src="../image/icon skil/css (1).png" alt="" class="mx-auto w-[65%] mt-2.5">
+                    </div>
+                    <div
+                        class="w-16 overflow-hidden h-16 bg-white rounded-2xl shadow-2xl cursor-pointer hover:bg-gradient-to-br hover:from-fuchsia-500 hover:to-amber-300  hover:scale-125 transition-all duration-1000">
+                        <img src="../image/icon skil/php.png" alt="" class="mx-auto -mt-0.5">
+                    </div>
+                    <div
+                        class="w-16 overflow-hidden h-16 bg-white rounded-2xl shadow-2xl cursor-pointer hover:bg-gradient-to-br hover:from-fuchsia-500 hover:to-amber-300  hover:scale-125 transition-all duration-1000">
+                        <img src="../image/icon skil/bostrap.png" alt="" class="mx-auto w-[80%] mt-2.5">
+                    </div>
+                    <div
+                        class="w-16 overflow-hidden h-16 bg-white rounded-2xl shadow-2xl cursor-pointer hover:bg-gradient-to-br hover:from-fuchsia-500 hover:to-amber-300  hover:scale-125 transition-all duration-1000">
+                        <img src="../image/icon skil/tailwindcss.png" alt="" class="mx-auto w-[90%] mt-2">
+                    </div>
+                    <div
+                        class="w-16 overflow-hidden h-16 bg-white rounded-2xl shadow-2xl cursor-pointer hover:bg-gradient-to-br hover:from-fuchsia-500 hover:to-amber-300  hover:scale-125 transition-all duration-1000">
+                        <img src="../image/icon skil/laravel.png" alt="" class="mx-auto w-[80%] mt-1.5">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-4 order-1 lg:order-2 ">
+                <div class="flex flex-col text-center lg:text-start gap-2">
+                    <h1 class="text-fuchsia-500 text-2xl font-poppins lg:text-4xl font-semibold">SKIL & TOOLS</h1>
+                    <p class="text-sm text-slate-200 lg:text-base">Ini adalah beberapa skil yang saya punya dan tools
+                        yang saya gunkan unutk membangun sebuah design UI/UX dan Web</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- fotter -->
+    <footer class="container mx-auto px-4 md:px-8 lg:px-16 ">
+        <h1 class="text-white font-poppins text-sm  text-center mb-5">Copyright@arisaepulloh2023</h1>
+        <div class="lg:w-[50%] w-[70%] h-0.5 mx-auto bg-gradient-to-r from-fuchsia-500 to-amber-500 mb-5"></div>
+        <div class="flex justify-center mb-6  mt-8 gap-4">
+            <a href="https://www.tiktok.com/@user_interface1" class="px-2 py-2 bg-gradient-to-br from-slate-100 to-fuchsia-400 rounded-full hover:animate-bounce">
+                <img src="../image/contac/facebook (2).svg" alt="">
+            </a>
+            <a href="https://www.instagram.com/ari.atenk/" class="px-2 py-2 bg-gradient-to-br from-slate-100 to-fuchsia-400 rounded-full hover:animate-bounce">
+               <img src="../image/contac/instagram (4).svg" alt="">
+            </a>
+            <a href="" class="px-2 py-2 bg-gradient-to-br from-slate-100 to-fuchsia-400 rounded-full hover:animate-bounce">
+               <img src="../image/contac/linkedin (2).svg" alt="">
+            </a>
+            <a href="https://www.tiktok.com/@user_interface1" class="px-2 py-2 bg-gradient-to-br from-slate-100 to-fuchsia-400 rounded-full hover:animate-bounce">
+                <img src="../image/contac/tiktok (1).svg" alt="">
+            </a>
+        </div>
+    </footer>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
